@@ -1,0 +1,75 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model User {
+  id String @id @default(uuid())
+
+  access String @default("NORMAL")
+  name String
+  email String @unique
+  password String
+
+  city String
+  uf String
+
+  @@unique([city, uf])
+
+  reports Report[]
+}
+
+model Report {
+  id String @id @default(uuid())
+
+  notifieds Int @default(0)
+  suspecteds Int @default(0)
+  discardeds Int @default(0)
+  positives Int @default(0)
+  recovereds Int @default(0)
+  deaths Int @default(0)
+  
+  inTreatment Int @default(0)
+  deathsInInvestigation Int @default(0)
+
+  mans Int @default(0)
+  womans Int @default(0)
+
+  reportAt DateTime @default(now())
+  reportBy User @relation(fields: [reportByUserId], references: [id])
+  reportByUserId String
+
+  locals Local[]
+  ageGroups AgeGroup[]
+}
+
+model Local {
+  id String @id @default(uuid())
+
+  name String
+  cases Int @default(0)
+
+  report Report @relation(fields: [reportId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  reportId String
+}
+
+model AgeGroup {
+  id String @id @default(uuid())
+
+  minAge Int @default(0)
+  maxAge Int @default(0)
+
+  cases Int @default(0)
+
+  report Report @relation(fields: [reportId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  reportId String
+}
