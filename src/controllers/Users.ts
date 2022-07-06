@@ -1,11 +1,15 @@
 import { Prisma } from "@prisma/client";
+import { Crypto } from "../services/crypto";
 import { db } from "../services/prisma";
 
 class Users {
   static async create(data: Prisma.UserCreateInput) {
+    const password = await Crypto.encrypt(data.password);
+
     return await db.user.create({
       data: {
         ...data,
+        password,
         access: "NORMAL"
       }
     });
@@ -46,12 +50,21 @@ class Users {
   };
 
   static async getByCredentials(email: string, password: string) {
-    return await db.user.findFirst({
+    const user = await db.user.findFirst({
       where: {
-        email,
-        password
+        email
       }
     });
+
+    if(user) {
+      const passwordIsValid = await Crypto.compare(password, user.password);
+
+      if(passwordIsValid) {
+        return user;
+      };
+    };
+
+    return null;
   };
 };
 

@@ -2,7 +2,7 @@ import { Prisma } from "@prisma/client";
 import { db } from "../services/prisma";
 
 class Reports {
-  static async new(
+  static async create(
     userId: string, 
     data: Prisma.ReportCreateInput, 
     locals: Prisma.Enumerable<Prisma.LocalCreateOrConnectWithoutReportInput>,
