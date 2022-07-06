@@ -36,6 +36,13 @@ class Users {
     return await db.user.findFirst({
       where: {
         id
+      },
+      select: {
+        access: true,
+        city: true,
+        email: true,
+        id: true,
+        name: true
       }
     });
   };
@@ -45,6 +52,13 @@ class Users {
       where: {
         uf,
         city
+      },
+      select: {
+        access: true,
+        city: true,
+        email: true,
+        id: true,
+        name: true
       }
     });
   };
