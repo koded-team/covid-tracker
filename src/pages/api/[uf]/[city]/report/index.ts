@@ -1,19 +1,21 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { Users } from "../../../../../controllers/Users";
+import { Reports } from "../../../../../controllers/Reports";
 import NotFoundError from "../../../../../errors/NotFound";
 import { Handler } from "../../../../../services/handler";
 
 async function create(
-  req: NextApiRequest,
+  req: ApiRequest,
   res: NextApiResponse
 ) {
+  const authorizedUser = req.user;
   const data = req.body;
-  const user = await Users.create(data);
 
-  return res.status(201).json(user);
+  const report = await Reports.create(String(authorizedUser?.id), data?.report, data?.locals, data?.ageGroups);
+
+  return res.status(201).json(report);
 };
 
-async function getByCity(
+async function getAllByCity(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -23,16 +25,16 @@ async function getByCity(
     throw new NotFoundError();
   };
 
-  const user = await Users.getByCity(uf, city);
+  const reports = await Reports.getAllByCity(uf, city);
 
-  if(!user) {
+  if(!reports) {
     throw new NotFoundError();
   };
 
-  return res.status(200).json(user);
+  return res.status(200).json(reports);
 };
 
 export default Handler.request({
-  "GET": await Handler.auth(getByCity, "MASTER"),
-  "POST": await Handler.auth(create, "MASTER")
+  "GET": getAllByCity,
+  "POST": await Handler.auth(create)
 });

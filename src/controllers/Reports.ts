@@ -67,10 +67,14 @@ class Reports {
     return newReport;
   };
 
-  static async getById(id: string) {
+  static async getById(id: string, uf: string, city: string) {
     return await db.report.findFirst({
       where: {
-        id
+        id,
+        reportBy: {
+          uf,
+          city
+        }
       },
       include: {
         ageGroups: true,
@@ -86,6 +90,29 @@ class Reports {
 
   static async getByCity(uf: string, city: string) {
     return await db.report.findFirst({
+      orderBy: {
+        reportAt: "asc"
+      },
+      where: {
+        reportBy: {
+          uf,
+          city
+        }
+      },
+      include: {
+        ageGroups: true,
+        locals: true,
+        reportBy: {
+          select: {
+            name: true
+          }
+        }
+      }
+    });
+  };
+
+  static async getAllByCity(uf: string, city: string) {
+    return await db.report.findMany({
       where: {
         reportBy: {
           uf,

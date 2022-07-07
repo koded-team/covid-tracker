@@ -1,17 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { Users } from "../../../../../controllers/Users";
+import { Reports } from "../../../../../controllers/Reports";
 import NotFoundError from "../../../../../errors/NotFound";
 import { Handler } from "../../../../../services/handler";
-
-async function create(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const data = req.body;
-  const user = await Users.create(data);
-
-  return res.status(201).json(user);
-};
 
 async function getByCity(
   req: NextApiRequest,
@@ -23,16 +13,15 @@ async function getByCity(
     throw new NotFoundError();
   };
 
-  const user = await Users.getByCity(uf, city);
+  const report = await Reports.getByCity(uf, city);
 
-  if(!user) {
+  if(!report) {
     throw new NotFoundError();
   };
 
-  return res.status(200).json(user);
+  return res.status(200).json(report);
 };
 
 export default Handler.request({
-  "GET": await Handler.auth(getByCity, "MASTER"),
-  "POST": await Handler.auth(create, "MASTER")
+  "GET": getByCity
 });
