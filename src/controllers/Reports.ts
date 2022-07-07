@@ -1,4 +1,5 @@
 import { Prisma } from "@prisma/client";
+import NotFoundError from "../errors/NotFound";
 import { db } from "../services/prisma";
 
 class Reports {
@@ -84,6 +85,37 @@ class Reports {
             name: true
           }
         }
+      }
+    });
+  };
+
+  static async deleteById(id: string, uf: string, city: string) {
+    const report = await db.report.findFirst({
+      where: {
+        id,
+        reportBy: {
+          uf,
+          city
+        }
+      },
+      include: {
+        ageGroups: true,
+        locals: true,
+        reportBy: {
+          select: {
+            name: true
+          }
+        }
+      }
+    });
+
+    if(!report) {
+      throw new NotFoundError();
+    };
+
+    return await db.report.delete({
+      where: {
+        id: report?.id
       }
     });
   };

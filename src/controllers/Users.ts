@@ -3,14 +3,14 @@ import { Crypto } from "../services/crypto";
 import { db } from "../services/prisma";
 
 class Users {
-  static async create(data: Prisma.UserCreateInput) {
+  static async create(data: Prisma.UserCreateInput, access: "NORMAL" | "MASTER" = "NORMAL") {
     const password = await Crypto.encrypt(data.password);
 
     return await db.user.create({
       data: {
         ...data,
         password,
-        access: "NORMAL"
+        access
       }
     });
   };
