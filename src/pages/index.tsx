@@ -11,13 +11,13 @@ function Home() {
         <title>Covid Tracker</title>
       </Head>
       <div
-        className="flex h-full"
+        className="flex h-full justify-between"
       >
         <section
           className="flex flex-col px-20 py-12 max-w-full md:max-w-[42rem] max-h-full h-full justify-between gap-8 md:gap-0"
         >
           <Logo/>
-          <div className="flex max-w-full flex-col gap-8">
+          <div className="mb-12 flex max-w-full flex-col gap-8">
             <div className="flex flex-col gap-[6px]">
               <h1
                 className="text-gray text-3xl md:text-5xl font-semibold leading-10 md:leading-[5.25rem]"
@@ -53,7 +53,7 @@ function Home() {
             Powered by ⚡️Koded
           </p>
         </section>
-        <section className="flex-1 justify-center items-center w-full h-full bg-[url('/assets/gradient.svg')] bg-cover hidden md lg:flex">
+        <section className="flex-1 max-w-2xl justify-center items-center w-full h-full bg-[url('/assets/gradient.svg')] bg-cover hidden md lg:flex">
           <DoctorImage/>
         </section>
       </div>
