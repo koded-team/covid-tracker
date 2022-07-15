@@ -3,7 +3,9 @@ import "../styles/main.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Component {...pageProps}/>
+    <div className="h-screen w-screen flex flex-col">
+      <Component {...pageProps}/>
+    </div>
   );
 };
 
