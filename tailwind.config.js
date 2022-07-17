@@ -22,7 +22,7 @@ module.exports = {
         }
       },
       animation: {
-        rotate: "slow-rotate 20s linear"
+        rotate: "slow-rotate 20s linear infinite"
       }
     },
   },

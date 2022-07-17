@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Button } from "../components/Button";
 import { DoctorImage } from "../components/DoctorImage";
-import { Input } from "../components/Input";
+import { Input, PasswordInput } from "../components/Input";
 import { Logo } from "../components/Logo";
 
 function Home() {
@@ -35,9 +35,9 @@ function Home() {
               className="flex flex-col gap-[1.375rem]"
             > 
               <Input placeholder="Digite seu e-mail aqui"/>
-              <Input placeholder="Digite sua senha aqui" type="password"/>
+              <PasswordInput placeholder="Digite sua senha aqui"/>
               <a 
-                className="text-base text-gray-02 hover:text-strong-blue hover:underline underline-offset-2"
+                className="text-base text-gray-02 hover:text-strong-blue hover:underline underline-offset-2 w-min whitespace-nowrap rounded-md"
                 href="#"
               >
                 Esqueceu a senha?
@@ -53,8 +53,26 @@ function Home() {
             Powered by ⚡️Koded
           </p>
         </section>
-        <section className="flex-1 max-w-2xl justify-center items-center w-full h-full bg-[url('/assets/gradient.svg')] bg-cover hidden md lg:flex">
-          <DoctorImage/>
+        <section className="relative flex-1 max-w-2xl justify-center items-center w-full h-full bg-[url('/assets/gradient.svg')] bg-cover hidden lg:flex flex-col">
+          <article
+            className="relative max-h-screen flex flex-col justify-between h-screen py-16 px-2 items-center"
+          >
+            <DoctorImage/>
+            <div
+              className="text-center lg:w-[18rem] xl:w-[32rem] max-w-full"
+            >
+              <h2
+                className="lg:text-xl xl:text-3xl font-semibold text-white"
+              >
+                Bem vindo ao Covid Tracker
+              </h2>
+              <p
+                className="lg:text-lg xl:text-2xl font-normal text-white"
+              >
+                Acompanhe em tempo real os números de casos de Covid-19 em sua cidade
+              </p>
+            </div>
+          </article>
         </section>
       </div>
     </>

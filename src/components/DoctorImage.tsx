@@ -1,39 +1,36 @@
 import Image from "next/image";
 import CovidCircle from "../../public/assets/covid-circle.svg";
 import DoctorHandImage from "../../public/assets/doctor-hand.svg";
-import IphoneImage from "../../public/assets/iphone.svg";
+import IphoneImage from "../../public/assets/iphone.png";
 
 function DoctorImage() {
   return (
     <div
-      className="relative max-h-screen flex lg:mr-[0px] xl:mr-[100px] pt-[80px]"
+      className="text-white relative flex flex-col !min-h-[17rem] !min-w-[17rem] !pb-10"
     >
       <Image
-        className="absolute max-h-full !right-10"
+        className="!absolute top-0 !drop-shadow-xl !min-w-[17rem] !pb-10"
         src={IphoneImage}
         alt=""
+        priority={true}
       />
-      <div
-        className="absolute flex right-4 top-[15rem] w-[18rem] h-[18rem] max-h-full"
+      <div 
+        className="!absolute !drop-shadow-2xl !pl-[2px] !pt-[2px] !shadow-2xl !top-14 !right-[-3.25rem] flex bg-slate-50 justify-center items-center rounded-full bg-opacity-20 backdrop-blur-[6px] !w-[14rem] !h-[14rem]"
       >
-        <div 
-          className="absolute flex bg-slate-50 justify-center items-center rounded-full bg-opacity-20 backdrop-blur-[6px] w-full h-full"
-        >
-          <Image
-            className="top-[15rem] w-[15rem] h-[15rem] animate-rotate"
-            src={CovidCircle}
-            alt=""
-          />
-
-        </div>
-        <div
-          className="absolute flex w-[34rem] h-[34rem] right-[0rem] top-[-5rem]"
-        >
-          <Image
-            src={DoctorHandImage}
-            alt=""
-          />
-        </div>
+        <Image
+          className="!min-w-[12rem] !min-h-[12rem] animate-rotate"
+          src={CovidCircle}
+          alt=""
+        />
+      </div>
+      <div
+        className="!absolute flex w-[25rem] !drop-shadow-2xl h-[34rem] !top-[-1.5rem] !right-[-1rem]"
+      >
+        <Image
+          src={DoctorHandImage}
+          alt=""
+          priority={true}
+        />
       </div>
     </div>
   );

@@ -7,6 +7,16 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.button-with-gradient {
-  background: linear-gradient(94.02deg, #7A36D9 -42.93%, #3CEAF5 122.48%, #3CEAF5 122.48%);
+@layer base {
+  .button-with-gradient {
+    background: linear-gradient(94.02deg, #7A36D9 -42.93%, #3CEAF5 122.48%, #3CEAF5 122.48%);
+  }
+
+  :focus-visible:not(input), :focus:not(input) {
+    @apply outline-none ring-2 ring-sea-blue ring-offset-4 transition-colors;
+  }
+
+  input:focus-visible, input:focus {
+    @apply transition-colors border-sea-blue outline-none;
+  }
 }
