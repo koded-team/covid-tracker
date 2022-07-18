@@ -24,7 +24,7 @@ function PasswordInput({ ...rest }: InputProps) {
 
   return (
     <div
-      className="relative"
+      className="relative max-w-[100%] w-[32rem]"
     >
       <Input
         type={isHidden? "password":"text"}

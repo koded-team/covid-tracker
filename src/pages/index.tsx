@@ -11,10 +11,10 @@ function Home() {
         <title>Covid Tracker</title>
       </Head>
       <div
-        className="flex h-full justify-between"
+        className="flex max-w-full max-h-full justify-between overflow-hidden"
       >
         <section
-          className="flex flex-col px-20 pt-12 max-w-full md:max-w-[42rem] max-h-full h-full justify-between gap-8 md:gap-0"
+          className="relative flex flex-col px-20 pt-12 overflow-y-auto scrollbar-thin scrollbar-thumb-sea-blue scrollbar-track-gray-04 md:min-w-[42rem] max-h-full h-full w-full lg:flex-1 justify-between gap-8 md:gap-0"
         >
           <Logo/>
           <div className="mb-12 flex max-w-full flex-col gap-8">
@@ -47,22 +47,26 @@ function Home() {
               </Button>
             </form>
           </div>
-          <p
-            className="text-gray-03 pb-12 self-center"
+          <div
+            className="w-[32rem] flex flex-col"
           >
-            Powered by⚡️<a
-              className="w-min whitespace-nowrap rounded-md hover:underline underline-offset-2"
-              href="https://github.com/koded-team"
-            >Koded</a>
-          </p>
+            <p
+              className="text-gray-03 pb-12 self-center"
+            >
+              Powered by⚡️<a
+                className="w-min whitespace-nowrap rounded-md hover:underline underline-offset-2"
+                href="https://github.com/koded-team"
+              >Koded</a>
+            </p>
+          </div>
         </section>
-        <section className="relative flex-1 max-w-2xl justify-center items-center w-full h-full bg-[url('/assets/gradient.svg')] bg-cover hidden lg:flex flex-col">
+        <section className="relative flex-1 max-w-2xl justify-center items-center w-0 h-full bg-[url('/assets/gradient.svg')] bg-cover hidden lg:flex flex-col lg:w-full">
           <article
             className="relative max-h-screen flex flex-col justify-between h-screen py-16 px-2 items-center"
           >
             <DoctorImage/>
             <div
-              className="text-center lg:w-[18rem] xl:w-[32rem] max-w-full"
+              className="text-center lg:w-[18rem] xl:w-[32rem] max-w-full mb-2"
             >
               <h2
                 className="lg:text-xl xl:text-3xl font-semibold text-white"
