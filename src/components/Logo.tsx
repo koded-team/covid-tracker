@@ -7,7 +7,7 @@ function Logo() {
       <Image
         className="w-[4.9rem] h-[4.9rem]"
         src={LogoImg} 
-        alt="" 
+        alt="Um ícone no formado de um vírus, o símbolo da aplicação" 
       />
       <div
         className="flex flex-col gap-0"

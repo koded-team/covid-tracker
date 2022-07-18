@@ -11,7 +11,7 @@ function DoctorImage() {
       <Image
         className="!absolute top-0 !drop-shadow-xl !min-w-[17rem] !pb-10"
         src={IphoneImage}
-        alt=""
+        alt="Uma imagem de um iphone com uma tela azul"
         priority={true}
       />
       <div 
@@ -20,7 +20,7 @@ function DoctorImage() {
         <Image
           className="!min-w-[12rem] !min-h-[12rem] animate-rotate"
           src={CovidCircle}
-          alt=""
+          alt="Um círculo com pouca opacidade que lembra a textura de um vidro e tem em seu centro um ícone que representa um vírus e uma mensagem rotativa que diz 'todos contra o corona vírus'"
         />
       </div>
       <div
@@ -28,7 +28,7 @@ function DoctorImage() {
       >
         <Image
           src={DoctorHandImage}
-          alt=""
+          alt="Um braço coberto por uma manga de um jaleco, nas mãos há uma seringa"
           priority={true}
         />
       </div>

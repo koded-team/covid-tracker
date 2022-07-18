@@ -39,9 +39,13 @@ function PasswordInput({ ...rest }: InputProps) {
           onClick={handleToogleVisibility}
         >
           {isHidden? <Image
+            aria-label="Press to see the password"
+            alt="Um ícone dentro de uma caixa de entrada representando um olho"
             src={EyeSlashImage}
             className="!ml-[0.4px]"
           />:<Image
+            aria-label="Press to hidden the password"
+            alt="Um ícone dentro de uma caixa de entrada representando um olho cortado"
             src={EyeImage}
             className="!mt-[1.2px]"
           />}
