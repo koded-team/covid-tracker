@@ -14,7 +14,7 @@ function Home() {
         className="flex max-w-full max-h-full justify-between overflow-hidden"
       >
         <section
-          className="relative flex flex-col px-20 pt-12 overflow-y-auto scrollbar-thin scrollbar-thumb-sea-blue scrollbar-track-gray-04 md:min-w-[42rem] max-h-full h-full w-full lg:flex-1 justify-between gap-8 md:gap-0"
+          className="relative flex flex-col px-20 pt-12 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-sea-blue scrollbar-track-gray-04 md:min-w-[42rem] max-h-full h-full w-full lg:flex-1 justify-between gap-8 md:gap-0"
         >
           <Logo/>
           <div className="mb-12 flex max-w-full flex-col gap-8">
@@ -48,7 +48,7 @@ function Home() {
             </form>
           </div>
           <div
-            className="w-[32rem] flex flex-col"
+            className="w-[32rem] max-w-[100%] flex flex-col"
           >
             <p
               className="text-gray-03 pb-12 self-center"
