@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import { InputHTMLAttributes, useState } from "react";
 import EyeSlashImage from "../../public/assets/eye-slash.svg";
 import EyeImage from "../../public/assets/eye.svg";
@@ -42,11 +42,17 @@ function PasswordInput({ ...rest }: InputProps) {
             aria-label="Aperte para deixar a senha visível"
             alt="Um ícone dentro de uma caixa de entrada representando um olho"
             src={EyeSlashImage}
+            width={25}
+            height={25}
+            priority={true}
             className="!ml-[0.4px]"
           />:<Image
             aria-label="Aperte para esconder a senha"
             alt="Um ícone dentro de uma caixa de entrada representando um olho cortado"
             src={EyeImage}
+            width={25}
+            height={25}
+            priority={true}
             className="!mt-[1.2px]"
           />}
         </button>
