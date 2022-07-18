@@ -39,11 +39,11 @@ function PasswordInput({ ...rest }: InputProps) {
           onClick={handleToogleVisibility}
         >
           {isHidden? <Image
-            src={EyeImage}
-            className="!mt-[1.2px]"
-          />:<Image
             src={EyeSlashImage}
             className="!ml-[0.4px]"
+          />:<Image
+            src={EyeImage}
+            className="!mt-[1.2px]"
           />}
         </button>
       </div>
