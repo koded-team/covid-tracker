@@ -50,7 +50,10 @@ function Home() {
           <p
             className="text-gray-03 pb-12 self-center"
           >
-            Powered by ⚡️Koded
+            Powered by⚡️<a
+              className="w-min whitespace-nowrap rounded-md hover:underline underline-offset-2"
+              href="https://github.com/koded-team"
+            >Koded</a>
           </p>
         </section>
         <section className="relative flex-1 max-w-2xl justify-center items-center w-full h-full bg-[url('/assets/gradient.svg')] bg-cover hidden lg:flex flex-col">
