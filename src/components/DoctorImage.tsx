@@ -18,7 +18,7 @@ function DoctorImage() {
         className="!absolute !drop-shadow-2xl !pl-[2px] !pt-[2px] !shadow-2xl !top-14 !right-[-3.25rem] flex bg-slate-50 justify-center items-center rounded-full bg-opacity-20 backdrop-blur-[6px] !w-[14rem] !h-[14rem]"
       >
         <Image
-          className="!min-w-[12rem] !min-h-[12rem] animate-rotate"
+          className="!min-w-[12rem] !min-h-[12rem] !h-[13rem] !w-[13rem] animate-rotate"
           src={CovidCircle}
           alt="Um círculo com pouca opacidade que lembra a textura de um vidro e tem em seu centro um ícone que representa a Covid-19 e uma mensagem rotativa que diz 'todos contra o corona vírus'"
         />
