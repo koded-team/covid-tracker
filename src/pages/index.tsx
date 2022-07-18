@@ -14,7 +14,7 @@ function Home() {
         className="flex h-full justify-between"
       >
         <section
-          className="flex flex-col px-20 py-12 max-w-full md:max-w-[42rem] max-h-full h-full justify-between gap-8 md:gap-0"
+          className="flex flex-col px-20 pt-12 max-w-full md:max-w-[42rem] max-h-full h-full justify-between gap-8 md:gap-0"
         >
           <Logo/>
           <div className="mb-12 flex max-w-full flex-col gap-8">
@@ -48,7 +48,7 @@ function Home() {
             </form>
           </div>
           <p
-            className="text-gray-03 self-center"
+            className="text-gray-03 pb-12 self-center"
           >
             Powered by ⚡️Koded
           </p>

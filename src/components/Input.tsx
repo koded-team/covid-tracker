@@ -1,5 +1,7 @@
-import { Eye, EyeSlash } from "phosphor-react";
+import Image from "next/image";
 import { InputHTMLAttributes, useState } from "react";
+import EyeSlashImage from "../../public/assets/eye-slash.svg";
+import EyeImage from "../../public/assets/eye.svg";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>{};
 
@@ -33,15 +35,15 @@ function PasswordInput({ ...rest }: InputProps) {
       >
         <button
           type="button"
-          className="text-sea-blue h-[25px] rounded-lg"
+          className="text-sea-blue h-[25px] w-[25px] rounded-lg"
           onClick={handleToogleVisibility}
         >
-          {isHidden? <EyeSlash
-            size={25}
-            weight="duotone"
-          />:<Eye
-            size={25}
-            weight="duotone"
+          {isHidden? <Image
+            src={EyeImage}
+            className="!mt-[1.2px]"
+          />:<Image
+            src={EyeSlashImage}
+            className="!ml-[0.4px]"
           />}
         </button>
       </div>

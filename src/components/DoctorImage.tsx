@@ -6,7 +6,7 @@ import IphoneImage from "../../public/assets/iphone.png";
 function DoctorImage() {
   return (
     <div
-      className="text-white relative flex flex-col !min-h-[17rem] !min-w-[17rem] !pb-10"
+      className="text-white relative flex drop-shadow-2xl flex-col !min-h-[17rem] !min-w-[17rem] !pb-10"
     >
       <Image
         className="!absolute top-0 !drop-shadow-xl !min-w-[17rem] !pb-10"

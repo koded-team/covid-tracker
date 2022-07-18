@@ -9,7 +9,14 @@
 
 @layer base {
   .button-with-gradient {
-    background: linear-gradient(94.02deg, #7A36D9 -42.93%, #3CEAF5 122.48%, #3CEAF5 122.48%);
+    @apply transition-all duration-700;
+    background: linear-gradient(94.02deg, #7A36D9 -42.93%, #3CEAF5 61.24%, #3685D9 100.00%);
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+  }
+
+  .button-with-gradient:hover {
+    background-position: 100% 0%;
   }
 
   :focus-visible:not(input), :focus:not(input) {
