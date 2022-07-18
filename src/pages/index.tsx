@@ -24,12 +24,12 @@ function Home() {
               >
                 Entrar
               </h1>
-              <h3
+              <h2
                 className="text-gray text-xl md:text-2xl leading-9 max-w-[32rem]"
               >
                 Bem-vindo, preencha os campos com
                 seus dados corretamento para fazer login
-              </h3>
+              </h2>
             </div>
             <form
               className="flex flex-col gap-[1.375rem]"

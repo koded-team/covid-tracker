@@ -39,7 +39,7 @@ function PasswordInput({ ...rest }: InputProps) {
           onClick={handleToogleVisibility}
         >
           {isHidden? <Image
-            aria-label="Aperte para deixar a senha vísivel"
+            aria-label="Aperte para deixar a senha visível"
             alt="Um ícone dentro de uma caixa de entrada representando um olho"
             src={EyeSlashImage}
             className="!ml-[0.4px]"

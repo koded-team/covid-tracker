@@ -20,7 +20,7 @@ function DoctorImage() {
         <Image
           className="!min-w-[12rem] !min-h-[12rem] animate-rotate"
           src={CovidCircle}
-          alt="Um círculo com pouca opacidade que lembra a textura de um vidro e tem em seu centro um ícone que representa um vírus e uma mensagem rotativa que diz 'todos contra o corona vírus'"
+          alt="Um círculo com pouca opacidade que lembra a textura de um vidro e tem em seu centro um ícone que representa a Covid-19 e uma mensagem rotativa que diz 'todos contra o corona vírus'"
         />
       </div>
       <div
