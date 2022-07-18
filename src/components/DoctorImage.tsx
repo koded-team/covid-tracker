@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import CovidCircle from "../../public/assets/covid-circle.svg";
 import DoctorHandImage from "../../public/assets/doctor-hand.svg";
 import IphoneImage from "../../public/assets/iphone.png";

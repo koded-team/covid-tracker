@@ -8,6 +8,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement>{};
 function Input({ className, ...rest }: InputProps) {
   return (
     <input
+      autoComplete="on"
       className={"max-w-[100%] w-[32rem] h-16 md:h-20 bg-gray-05 border-2 rounded-[0.65rem] border-gray-03 py-[1.375rem] px-8 text-base leading-9 hover:border-sea-blue " + className}
       {...rest}
     />
@@ -28,6 +29,7 @@ function PasswordInput({ ...rest }: InputProps) {
       <Input
         type={isHidden? "password":"text"}
         className="pr-16"
+        autoComplete="current-password"
         {...rest}
       />
       <div
